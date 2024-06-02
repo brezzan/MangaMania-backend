@@ -172,6 +172,21 @@ public class MangaManiaRestController {
 
 	}
 	
+
+	
+	@GetMapping("/rootcomment/chapterid")  // fix this 
+	public List<Comment> rootCommentsOfChapter(@RequestParam String id){
+		
+	
+		Sort sort = Sort.by(Sort.Direction.ASC, "date");
+
+		// Retrieve root comments under the specific chapter,sorted by date
+		List<Comment> rootCommentsForChapter = commentRepo.findByChapter_ChapterId(id, sort);
+		
+		return rootCommentsForChapter;
+
+	}
+	
 	
 	@GetMapping("/user")  // works
 	public List<User> user(){
