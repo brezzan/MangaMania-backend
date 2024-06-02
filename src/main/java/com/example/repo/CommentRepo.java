@@ -30,10 +30,12 @@ public interface CommentRepo extends MongoRepository<Comment,String>{
     // test if these work 
     
     @Query(value = "{'rootComment': null}")  // fields = "{ 'rootComment' : 1 }" ? 
-    public List<Comment> findDistinctRootComments();  // return me distinct root comments a root comment has no root so null 
+    public List<Comment> findDistinctRootComments();  // return me distinct root comments,a root comment has no root so null 
     
     
     public List<Comment> findByRootComment_CommentId(String rootCommentId, Sort sort);   // ? 
-
-   
+    
+    @Query(value = "{'rootComment': null}")  // fields = "{ 'rootComment' : 1 }" ? 
+    public List<Comment> findByChapter_ChapterId(String chapterId, Sort sort);   // ? 
+    
 }
