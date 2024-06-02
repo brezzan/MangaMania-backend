@@ -174,7 +174,7 @@ public class MangaManiaRestController {
 	
 
 	
-	@GetMapping("/rootcomment/chapterid")  // fix this 
+	@GetMapping("/rootcomment/chapterid/")  // fix this 
 	public List<Comment> rootCommentsOfChapter(@RequestParam String id){
 		
 	
